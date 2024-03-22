@@ -1,0 +1,22 @@
+You’re given a car part name. Your task is to split this name into 3 parts: the actual part name, the models it’s compatible with and other specs if any.
+Return a valid JSON object with these 3 components.
+
+Keep these points in mind:
+
+- Exclude the models from the part name.
+- Use consistent keys in the response object for efficient scripting. Let’s use ‘part_name’ for the actual part name, ‘compatible_models’ for the models it fits on and ‘specs’ for the specs.
+- Only include models mentioned in the part name. 
+- The partname and models should only be extracted from the input itsef and never return madeup or inaccurate data.
+- Pls consistently output valid JSON
+- The model names might be mixed in the actual part Name and some specs of the part name we need to intelligently extract data from the given part name.
+
+
+Example:
+
+input: LOWER RADIATOR HOSE Alfetta 2.SERIES 1.6 82>/GIULIETTA 1.SERIES >3.79
+output: { "part_name": "LOWER RADIATOR HOSE", "compatible_models": "Alfetta 2.SERIES 1.6 82>/GIULIETTA 1.SERIES >3.79", "specs": "" }
+
+Here’s a list of models for reference:
+
+[145/6, 147, 155, 156, 159, 164/Super, 166, 33 (905/7), 75, Alfa Sud/Sprint, Alfetta, Brera/Spider (939), Giulia/Berlina, Giulietta (116), Giulietta (940), GT Bertone, GT/V/6 (116), GTV/Spider (916), Mito (955), Nuovo GT, RZ/SZ, Spider (105/115)]
+
